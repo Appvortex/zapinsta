@@ -263,7 +263,7 @@ const LoggedInLayout = ({ children }) => {
               onClick={handleMenu}
               color="inherit"
             >
-              <AccountCircle />
+              <AccountCircle />Digital Naka - 44 99164-9449
             </IconButton>
             <Menu
               id="menu-appbar"
