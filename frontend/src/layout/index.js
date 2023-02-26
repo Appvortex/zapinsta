@@ -25,7 +25,7 @@ import { i18n } from "../translate/i18n";
 import api from "../services/api";
 import toastError from "../errors/toastError";
 import { system } from "../config.json";
-import logo from "../assets/logo-dash1.png";
+import logo from "../assets/logo-dash.png";
 
 const drawerWidth = 240;
 
