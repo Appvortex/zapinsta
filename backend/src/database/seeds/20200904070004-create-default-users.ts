@@ -6,8 +6,8 @@ module.exports = {
       "Users",
       [
         {
-          name: "Administrador",
-          email: "admin@kingticket.com",
+          name: "Naka",
+          email: "ldamidia@gmail.com",
           passwordHash: "$2a$08$WaEmpmFDD/XkDqorkpQ42eUZozOqRCPkPcTkmHHMyuTGUOkI8dHsq",
           profile: "admin",
           tokenVersion: 0,
