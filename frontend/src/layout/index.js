@@ -247,13 +247,10 @@ const LoggedInLayout = ({ children }) => {
             noWrap
             className={classes.title}
           >
-            {system.name}
-            <span className={classes.systemCss}>
-              {""}{system.version}{""}
-            </span>
+Digital Naka - 44 99164-9449
           </Typography>
 
-          {user.id && <NotificationsPopOver />}
+          
 
           <div>
             <IconButton
@@ -263,7 +260,7 @@ const LoggedInLayout = ({ children }) => {
               onClick={handleMenu}
               color="inherit"
             >
-              <AccountCircle />Digital Naka - 44 99164-9449
+              <AccountCircle />
             </IconButton>
             <Menu
               id="menu-appbar"
