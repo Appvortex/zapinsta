@@ -2,21 +2,27 @@ import { QueryInterface } from "sequelize";
 
 module.exports = {
   up: (queryInterface: QueryInterface) => {
-    return queryInterface.bulkInsert(
-      "Users",
-      [
-        {
-          name: "Naka",
-          email: "ldamidia@gmail.com",
-          passwordHash: "$2a$08$WaEmpmFDD/XkDqorkpQ42eUZozOqRCPkPcTkmHHMyuTGUOkI8dHsq",
-          profile: "admin",
-          tokenVersion: 0,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        }
-      ],
-      {}
-    );
+    return queryInterface.sequelize.transaction(async t => {
+      const passwordHash = await hash("123456", 8);
+      return Promise.all([
+        queryInterface.bulkInsert(
+          "Users",
+          [
+            {
+              name: "Admin",
+              email: "admin@admin.com",
+              profile: "admin",
+              passwordHash,
+              companyId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              super: true
+            }
+          ],
+          { transaction: t }
+        )
+      ]);
+    });
   },
 
   down: (queryInterface: QueryInterface) => {
